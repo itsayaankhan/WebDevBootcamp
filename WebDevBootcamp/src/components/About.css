@@ -1,0 +1,221 @@
+/* Reuse the page colors and the Hero's plain sans-serif typography. */
+.about {
+  --about-accent: #365ce6;
+  --about-card-background: #eef1fc;
+  --about-sans: Arial, Helvetica, sans-serif;
+
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-block: 120px;
+}
+
+.about-section-label {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  color: var(--about-accent);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.about h2 {
+  margin: 30px 0 34px;
+  font-family: var(--about-sans);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.about-subtitle {
+  margin: 0;
+  color: var(--navigation-color);
+  font-family: var(--about-sans);
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+.about-portrait-card {
+  margin: 0;
+  padding: 24px;
+  border-radius: 12px;
+  background: var(--about-card-background);
+  color: var(--navigation-color);
+}
+
+.about-image-label {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.about-portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 332 / 205;
+  /* Crop the square photo to the PDF's frame, keeping the top of the head visible. */
+  object-fit: cover;
+  object-position: center top;
+}
+
+.about-portrait-card figcaption {
+  margin-top: 22px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.about-biography {
+  min-width: 0;
+  font-family: var(--about-sans);
+}
+
+.about-biography h3 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 49px;
+}
+
+.about-biography h3 span {
+  display: block;
+}
+
+.about-introduction {
+  margin: 24px 0 0;
+  color: var(--navigation-color);
+  font-size: 20px;
+  letter-spacing: 0.2px;
+  line-height: 29px;
+}
+
+.about-projects-description {
+  margin: 26px 0 0;
+  color: var(--navigation-color);
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  line-height: 26px;
+}
+
+.about-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 26px 0 0;
+}
+
+.about-details dt {
+  color: var(--navigation-color);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.about-details dd {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.about-current-focus {
+  margin: 26px 0 0;
+  color: var(--about-accent);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  font-size: 14px;
+  line-height: 22px;
+  overflow-wrap: anywhere;
+}
+
+.about-current-focus code {
+  font: inherit;
+}
+
+@media (max-width: 1250px) {
+  .about {
+    padding-block: 80px;
+  }
+
+  .about-layout {
+    grid-template-columns: minmax(260px, 0.5fr) minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .about-biography h3 {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}
+
+/* Stack the portrait and biography when two columns become cramped. */
+@media (max-width: 900px) {
+  .about {
+    padding-block: 56px;
+  }
+
+  .about h2 {
+    font-size: 36px;
+  }
+
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+
+  .about-portrait-card {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding-block: 40px;
+  }
+
+  .about h2 {
+    margin: 24px 0;
+    font-size: 30px;
+    line-height: 1.25;
+  }
+
+  .about-portrait-card {
+    padding: 20px;
+  }
+
+  .about-image-label {
+    font-size: 12px;
+  }
+
+  .about-portrait-card figcaption {
+    font-size: 11px;
+  }
+
+  .about-biography h3 {
+    font-size: 25px;
+    line-height: 36px;
+  }
+
+  .about-introduction,
+  .about-projects-description {
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .about-details {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .about-current-focus {
+    font-size: 12px;
+  }
+}
