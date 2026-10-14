@@ -1,0 +1,138 @@
+/* Desktop dimensions and colors follow the PDF reference. */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--page-background);
+}
+
+.navbar-inner {
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  min-height: 90px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: var(--brand-color);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0 0 0 auto;
+  padding: 0 144px 0 24px;
+  list-style: none;
+}
+
+.navbar-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding-block: 12px;
+  color: var(--navigation-color);
+  font-size: 12px;
+  line-height: 17px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar-brand,
+.navbar-links a,
+.navbar-toggle {
+  transition: color 150ms ease;
+}
+
+.navbar-links a:hover,
+.navbar-toggle:hover {
+  color: var(--brand-color);
+}
+
+.navbar-brand:hover {
+  color: var(--navigation-color);
+}
+
+.navbar a:focus-visible,
+.navbar-toggle:focus-visible {
+  outline: 2px solid var(--brand-color);
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+/* Keep all six links on one row while space allows. */
+@media (max-width: 1199px) {
+  .navbar-links {
+    padding-right: 0;
+    gap: 22px;
+  }
+}
+
+/* On small screens the button reveals the same navigation list. */
+@media (max-width: 900px) {
+  .navbar-inner {
+    min-height: 72px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    font-size: 16px;
+    gap: 8px;
+  }
+
+  .navbar-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 8px 0 8px 12px;
+    border: 0;
+    background: transparent;
+    color: var(--navigation-color);
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 16px;
+  }
+
+  .navbar-links.is-open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .navbar-links a {
+    display: flex;
+    min-height: 44px;
+    padding: 12px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar a,
+  .navbar-toggle {
+    transition: none;
+  }
+}
